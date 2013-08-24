@@ -100,8 +100,7 @@ NSString *const PERSISTENTDATA_DATA_SCROBBLINGSTATE = @"ScrobblingEnabled";
         [[[self activeData] songData] setArtist:[information valueForKey:@"Artist"]];
         [[[self activeData] songData] setAlbum:[information valueForKey:@"Album"]];
         [[[self activeData] songData] setTrack:[information valueForKey:@"Name"]];
-        [[[self activeData] songData] setTrackNumber:[NSString stringWithFormat:@"%@",
-                                                      [information valueForKey:@"Track Number"]]];
+        [[[self activeData] songData] setTrackNumber:[NSNumber numberWithInt:[[information valueForKey:@"Track Number"] intValue]]];
         [[[self activeData] songData] setTimestamp:[NSNumber numberWithInt:[[self activeData] startTime]]];
         [[[self activeData] songData] setDuration:[NSNumber numberWithInt:[[self activeData] duration]]];
         if ([[information valueForKey:@"Album Artist"] isEqualToString:[information valueForKey:@"Artist"]])
